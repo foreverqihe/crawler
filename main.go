@@ -1,9 +1,28 @@
+//go:generate swagger generate spec /o static/spec.json
+
+// Package api Crawler API.
+//
+// Web Crawler API
+//     Schemes: http
+//     Host: localhost
+//     Version: 0.1
+//     Contact: foreverqihe@gmail.com
+//
+//     Consumes:
+//     - application/json
+//
+//     Produces:
+//     - application/json
+//
+// swagger:meta
 package main
 
 import (
-	"github.com/foreverqihe/crawler/api"
-	log "github.com/sirupsen/logrus"
 	"os"
+
+	"github.com/foreverqihe/crawler/api"
+	"github.com/foreverqihe/crawler/core"
+	log "github.com/sirupsen/logrus"
 )
 
 func init() {
@@ -14,7 +33,7 @@ func init() {
 
 func main() {
 	log.Infoln("Crawler started")
-	crawler := new(api.CrawlerApi)
+	crawler := api.CrawlerAPI{Handler: core.NewHander()}
 	if err := crawler.Run(); err != nil {
 		log.Fatalln("failed to start api", err)
 	}

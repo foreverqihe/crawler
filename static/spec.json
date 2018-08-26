@@ -1,0 +1,64 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "description": "Web Crawler API",
+    "title": "Crawler API.",
+    "contact": {
+      "email": "foreverqihe@gmail.com"
+    },
+    "version": "0.1"
+  },
+  "host": "localhost",
+  "paths": {
+    "/v1/crawl": {
+      "post": {
+        "description": "crawl the url with a limit of depth",
+        "produces": [
+          "application/json"
+        ],
+        "operationId": "crawl",
+        "parameters": [
+          {
+            "description": "the request url and depth",
+            "name": "request_json",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "depth": {
+                  "description": "0 doesn't retrieve anything, 1 retrieves the root url only, 2 retries level one leaves, etc.",
+                  "type": "integer"
+                },
+                "url": {
+                  "description": "the root url to retrieve",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful and body will contain a json tree"
+          },
+          "400": {
+            "description": "bad request, the request json maybe malformatted"
+          },
+          "500": {
+            "description": "server internal error"
+          }
+        }
+      }
+    }
+  }
+}

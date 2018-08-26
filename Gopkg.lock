@@ -20,6 +20,18 @@
   version = "v1.6.1"
 
 [[projects]]
+  name = "github.com/h2non/gock"
+  packages = ["."]
+  revision = "26775f23aa9da4cbd47bc2600a57ac07bbf3bd20"
+  version = "v1.0.7"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/nbio/st"
+  packages = ["."]
+  revision = "e9e8d9816f3268def6dcbd2dea03301f40e9de94"
+
+[[projects]]
   name = "github.com/sirupsen/logrus"
   packages = ["."]
   revision = "d682213848ed68c0a260ca37d6dd5ace8423f5ba"
@@ -33,6 +45,15 @@
 
 [[projects]]
   branch = "master"
+  name = "golang.org/x/net"
+  packages = [
+    "html",
+    "html/atom"
+  ]
+  revision = "f5dfe339be1d06f81b22525fe34671ee7d2c8904"
+
+[[projects]]
+  branch = "master"
   name = "golang.org/x/sys"
   packages = [
     "unix",
@@ -43,6 +64,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "718a417397acece30b4e473fd038b08024db2356c3c2a8aed9b4463d9289ad04"
+  inputs-digest = "0d343952bd3b1832855413d8843e1012a76d1ec59c47f1ae7f7f4d5a81dcfa0d"
   solver-name = "gps-cdcl"
   solver-version = 1
