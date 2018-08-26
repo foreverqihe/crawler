@@ -11,8 +11,8 @@ It also supports limit by depth so it retrieves the pages that are close to the 
 to start the server:
 
 $ go build -v
-$ ./crawler
 
+$ ./crawler
 
 $ curl http://localhost:8080/v1/crawl -d '{"url": "https://google.com.au", "depth": 2}' > 2.json
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
